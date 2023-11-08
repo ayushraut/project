@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './Appa.css';
+import Navbar from './components/Navbar';
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
+import Signup from './components/Signup';
+import Login from './components/Login';
+import Details from './Pages/Details';
+import Alert from './components/Alert';
+import GC from './components/GC';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+  <div>
+  <Navbar/>
+  </div>
+
+<BrowserRouter>
+
+<Routes>
+
+
+<Route path='/' element={<Login />}></Route>
+ <Route path='/signup' element={<Signup />}></Route>
+ <Route path='/StudentDetails' element={<Details />}></Route>
+ <Route path='/Alertmessage' element={<Alert />}></Route>
+ <Route path='/Generatecertificate' element={<GC />}></Route>
+
+
+</Routes>
+
+</BrowserRouter>
+
+
+ </>
   );
 }
 
